@@ -24,7 +24,7 @@ myApp.controller('estimateController', ['$scope', '$sce','$filter', '$http', '$l
     }else{
         apiService.get("estimates/" + $scope.id, function(r){
             $log.warn(r);
-            $scope.estimate = r;
+            $scope.estimate = r.estimate;
             $scope.bind();
         });
     }
