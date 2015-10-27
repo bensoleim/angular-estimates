@@ -6,6 +6,7 @@
             <div class="align-c col-select"><input class="est-select-all" type="checkbox" /></div>
             <div data-col="est-id">#</div>
             <div data-col="est-owner">Name</div>
+            <div data-col="est-organization">Organization</div>
             <div data-col="est-title">Title</div>
             <div data-col="est-created">Created</div>
             <div data-col="est-updated">Updated</div>
@@ -15,6 +16,7 @@
             <div data-col="action" class="align-c"><input class="est-select" type="checkbox" /></div>
             <div data-col="est-id">{{ estimate.id }}</div>
             <div data-col="est-owner">{{ estimate.owner.first_name }} {{ estimate.owner.last_name }}</div>
+            <div data-col="est-organization">{{ estimate.organization.name }}</div>
             <div data-col="est-title">{{ estimate.title }}</div>
             <div data-col="est-created">{{ estimate.created_at | date:'MM/dd/yyyy @ h:mma'}}</div>
             <div data-col="est-updated">{{ estimate.updated_at | date:'MM/dd/yyyy @ h:mma'}}</div>

@@ -192,7 +192,58 @@
             </ul>
         </section>
 
+        <section class="col-3 estimate-footer">
+            <div>
+                <h4>Footer Message</h4>
+                <textarea class="editor" data-type="footer">{{estimate.content_footer}}</textarea>
+            </div><!--close footer-message-->
+            <div>
+                <h4>Attachments &amp; Links</h4>
+                <div class="attachment-box">
+                    <div><a class="btn btn-primary"><i class="ss-icon">link</i> Add Link</a> <a class="btn btn-primary"><i class="ss-icon">attach</i> Add Attachment</a></div>
+                    <div class="form-group inline">
+                        <div class="attachment-info"><i class="ss-icon">link</i> <input type="text" placeholder="Link Name" class="form-control"/> <input type="text" class="form-control" placeholder="URL"/></div>
+                        <div class="attachment-options"><a class="btn btn-sm">Add</a></div>
+                    </div>
+                    <div class="form-group inline">
+                        <div class="attachment-info"><i class="ss-icon">link</i> <input type="text" placeholder="Link Name" class="form-control"/> <input type="text" class="form-control" placeholder="URL"/></div>
+                        <div class="attachment-options"><a class="btn btn-sm"><i class="ss-icon">refresh</i></a></div>
+                    </div>
+                    <div>
+                        <div class="attachment-info"><i class="ss-icon">link</i> <span class="file-name"><strong>Link Name</strong></span></div>
+                        <div class="attachment-options"><div class="btn-group"><a class="btn btn-sm"><i class="ss-icon">edit</i></a><a class="btn btn-sm"><i class="ss-icon">trash</i></a></div> <i class="ss-icon handle">rows</i></div>
+                    </div>
+                </div>
+            </div><!--close attachments-->
+            <div class="total-box">
+                Groups total: <span class="primary" id="est_total">${{estimate.groups_total}}</span><br/>
+                <div class="form-group">
+                    <label>Tax Rate</label>
+                    <input name="estimate[tax_rate]" class="form-control tax-rate" id="estimate-tax_rate" value="{{estimate.tax_rate}}" data-key="tax_rate" />
+                </div>
+
+                Tax: <span class="primary" id="est_tax">$0.00</span><br/>
+                <div class="total">Estimate Total: <span class="action" id="est_grand_total">${{estimate.groups_total}}</span></div>
+            </div><!--clsoe total-box-->
+        </section><!--close estimate-footer-->
     </main>
+
+
+    <footer>
+        <div class="tray estimate-controls">
+            <div>
+                <ul>
+                    <li><div class="btn btn-lg btn-action grad btn-send-estimate"><i class="ss-send"></i> <span>Send</span></div></li>
+                    <li><div class="btn btn-lg btn-primary grad btn-save-estimate"><i class="ss-hdd"></i> <span>Save</span></div></li>
+                    <li><div class="btn btn-lg grad"><i class="ss-zoomin"></i> <span>Preview</span></div></li>
+                    <li><div class="btn btn-lg grad"><i class="icon-saverev"></i><span>Save Revision</span></div></li>
+                    <li><div class="btn btn-lg grad"><i class="ss-layers"></i> <span>Duplicate</span></div></li>
+                    <li><div class="btn btn-lg grad btn-make-template"><i class="ss-fill"></i> <span>Make Template</span></div></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
 
 
 </section>

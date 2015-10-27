@@ -25,6 +25,7 @@ myApp.controller('estimateController', ['$scope', '$sce','$filter', '$http', '$l
         apiService.get("estimates/" + $scope.id, function(r){
             $log.warn(r);
             $scope.estimate = r;
+            $scope.bind();
         });
     }
 
@@ -38,6 +39,47 @@ myApp.controller('estimateController', ['$scope', '$sce','$filter', '$http', '$l
             console.log(e);
         });
     };
+
+    $scope.bind = function()
+    {
+        setTimeout(function(){
+            $("textarea.editor").tinymce({
+                script_url: 'media/js/extra/tinymce/tinymce.min.js',
+                selector: "textarea.editor",
+                toolbar: "bold italic underline bullist numlist outdent indent undo redo removeformat",
+                menubar: false,
+                theme: "modern",
+                skin: 'lightgray',
+                plugins: "autoresize",
+                relative_urls: false,
+                convert_newlines_to_brs: false,
+                extended_valid_elements: "a[name|href|target|rel|title|onclick],hr[class|width|size|noshade],font[face|size|color|style],span[class|align|style],script[defer|language|src|type],div[class|style],object[classid|codebase|width|height],param[name|value],embed[type|src|width|height],noscript",
+                force_p_newlines: false,
+                setup: function (ed)
+                {
+                    ed.on('init', function(e) {
+
+                    });
+                    ed.on('change', function (e)
+                    {
+                        var editor_type = $("#" + ed.id).data("type");
+                        switch (editor_type)
+                        {
+                            case "group":
+                                // var group_id = $("#" + ed.id).data("groupId");
+                                //self.setGroupDetail(group_id, "description", ed.getContent());
+                                break;
+
+                            case "footer":
+                                //self.data.estimate.content_footer = ed.getContent();
+                                break;
+                        }
+                    });
+                }
+            });
+        }, 300);
+
+    }
 
 
 }]);
