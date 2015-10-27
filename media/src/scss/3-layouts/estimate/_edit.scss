@@ -1,0 +1,90 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 18, 2014, 2:59:54 PM
+    Author     : bsoleim
+*/
+
+/*ESTIMATE PAGES*/
+/*CREATE ESTIMATE FORM*/
+#create-estimate-form {font-size:15px; margin-bottom:20px;}
+
+#create-estimate-form label {display:block;}
+#create-estimate-form input {display:inline-block;}
+
+#create-estimate-form .group-top {margin-bottom:5px; position:relative; }
+#create-estimate-form .group-top label, #create-estimate input {display:inline;}
+#create-estimate-form .group-top label {margin-right:10px;}
+
+#create-estimate-form textarea, #create-estimate-form .team-box {height:180px;}
+#create-estimate-form .team-box {background-color:#fff; border:1px solid #ccc; -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075); box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075); -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; border-radius:4px; overflow-y:scroll; padding:6px 12px;}
+.team-box .team-select-list div {padding: 4px;}
+.team-select-list.table-view li:nth-child(odd) {background-color:#fff;}
+
+#create-estimate-form  .user-select-list { position: absolute; z-index: 1000; background-color: white; border: 1px solid #cecece; padding: 20px; border-radius: 7px; -moz-border-radius: 7px; box-shadow: 3px 3px 7px #dedede; width:100%; }
+#create-estimate-form  .user-select-list .user { padding: 3px 3px; cursor:pointer;   }
+#create-estimate-form  .user-select-list .user:hover { background-color: #ececec; outline: 1px dashed #cecece; }
+#create-estimate-form  .user-select-list li { margin: 3px 0; }
+#create-estimate-form  .user-select-list ul { list-style: none; margin: 0; padding-left: 0; }
+
+#create-estimate-form
+{
+    #search-orgs_wrapper
+    { 
+        position: absolute; z-index: 1000; background-color: white; border: 1px solid #cecece; padding: 20px; border-radius: 7px; -moz-border-radius: 7px; box-shadow: 3px 3px 7px #dedede; width:100%; 
+        .items-list { list-style: none; margin-left:0; padding-left: 0; }
+        .item { padding: 3px 3px; cursor: pointer; }
+        .item:hover { background-color: #ececec; outline: 1px dashed #cecece; }
+    }
+}
+
+.estimate-footer {margin-top:30px; margin-bottom:45px;}
+
+.add-item-dropdown .menu {width:520px; margin-left:-415px;}
+.add-item-dropdown .sidebar, .add-item-dropdown .col-main {max-height:300px; overflow-y:scroll;}
+.add-item-dropdown .sidebar {width:40%;}
+.add-item-dropdown .sidebar .tabs li:first-child.active a {border-radius:0;}
+.add-item-dropdown .col-main {width:60%; padding:6px 20px;}
+.add-item-dropdown .form-group {padding:10px 18px; margin-bottom:0; border-bottom:1px solid #d3d5d3; color:#3c3e3e;}
+
+/*ESTIMATE TABLES*/
+.estimate-groups { list-style: none; margin-left: 0; padding-left: 0; }
+.group-table .group-qty {width:4%;}
+.group-table .group-desc {width:67%;}
+.editable input { color: black; padding:6px; width:100%; }
+.estimate-groups .group-name { width: 80%; }
+.total-box {text-transform:uppercase; font-family:'Riga-Bold', sans-serif; text-align:right; padding:15px;}
+.total-box .primary, .total-box .action {font-size:1.611em; margin-left:15px;}
+.total-box .total {padding-top:20px; border-top:1px solid; margin-top:5px;}
+.item .qty { width: 45px; font-size: 15px; padding: 0; height: 32px; text-align: center; }
+table.mceLayout, textarea.tinyMCE { width: 100% !important; }
+
+/*ATTACHMENT BOX*/
+.attachment-box {background-color:#e9eaea; border-radius:4px; font-size:0.889em;}
+.attachment-box > div {padding:7px 10px; border-bottom:1px solid #c7c9c7;}
+.attachment-box > div:after {visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0;}
+.attachment-box > div:last-child {border-bottom:none;}
+.attachment-box .form-group {margin-bottom:0;}
+.attachment-box .form-group.inline input {width:40%;}
+.attachment-box .attachment-info {float:left;}
+.attachment-box .attachment-options {width:92px; float:right; text-align:right;}
+
+/*ESTIMATE CONTROLS*/
+.estimate-controls { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+.estimate-controls > div {display:table; width:100%; border-collapse: separate; border-spacing: 10px;}
+.estimate-controls.top > div {border-spacing:5px;}
+.estimate-controls > div > ul {display:table-row}
+.estimate-controls > div > ul > li {display:table-cell; width:16.6667%; padding:0; height:70px; vertical-align:middle; white-space:normal;}
+.estimate-controls > div > ul > li .btn { position: relative; }
+.estimate-controls.top > div > ul > li {height:31px;}
+.estimate-controls .btn-lg {padding:18px 0;}
+.estimate-controls .btn-lg span {display: inline-block; vertical-align: middle; max-width: 50%; text-align: left; line-height: 1em; margin-left: 5px;}
+
+.visibility-list { width: 127px; position: absolute; left: 0; }
+.visibility-list label { color: black; font-size: .90em; }
+
+/*==================END ESTIMATE PAGES==================*/
+

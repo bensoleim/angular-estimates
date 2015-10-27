@@ -1,0 +1,26 @@
+<h1>Estimates</h1>
+
+<section id="est-items">
+    <ul class="table-view click-rows estimate-table" ng-cloak>
+        <li class="thead blue-grad">
+            <div class="align-c col-select"><input class="est-select-all" type="checkbox" /></div>
+            <div data-col="est-id">#</div>
+            <div data-col="est-owner">Name</div>
+            <div data-col="est-title">Title</div>
+            <div data-col="est-created">Created</div>
+            <div data-col="est-updated">Updated</div>
+        </li>
+
+        <li class="est" id="est_{{estimate.id}}" data-id="{{estimate.id}}" ng-repeat="estimate in estimates" ng-click="go('/estimate/' + estimate.id);">
+            <div data-col="action" class="align-c"><input class="est-select" type="checkbox" /></div>
+            <div data-col="est-id">{{ estimate.id }}</div>
+            <div data-col="est-owner">{{ estimate.owner.first_name }} {{ estimate.owner.last_name }}</div>
+            <div data-col="est-title">{{ estimate.title }}</div>
+            <div data-col="est-created">{{ estimate.created_at | date:'MM/dd/yyyy @ h:mma'}}</div>
+            <div data-col="est-updated">{{ estimate.updated_at | date:'MM/dd/yyyy @ h:mma'}}</div>
+        </li>
+    </ul>
+</section>
+
+
+<div class="est_pagination blue-grad"></div>

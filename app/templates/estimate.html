@@ -1,0 +1,198 @@
+
+
+<section ng-cloak class="page-create-estimate">
+
+    <header class="tray top estimate-controls">
+        <div>
+            <ul>
+                <li><div class="btn btn-action grad"><i class="ss-send"></i></div></li>
+                <li><div class="btn btn-primary grad" ng-click="saveEst()"><i class="ss-hdd"></i></div></li>
+                <li><div class="btn grad"><i class="ss-zoomin"></i></div></li>
+                <li><div class="btn grad"><i class="icon-saverev"></i></div></li>
+                <li><div class="btn grad"><i class="ss-layers"></i></div></li>
+                <li><div class="btn grad"><i class="ss-fill"></i></div></li>
+            </ul>
+        </div>
+    </header>
+
+
+
+    <main>
+        <h1 class="page-name">Create New Estimate</h1>
+
+        <section class="well" id="create-estimate-form">
+            <div class="form-row col-5 clearfix">
+                <div class="form-group">
+                    <label>Estimate Date</label>
+                    <input id="estimate[dated]" type="text" class="form-control input-lg" value="{{estimate.dated}}" /> <i class="ss-calendar clicker"></i>
+                </div>
+                <div class="form-group">
+                    <label>Estimate #</label>
+                    <input id="estimate[id]" type="text" class="form-control" value="{{estimate.id}}" />
+                </div>
+                <div class="form-group">
+                    <label>Type</label>Estimate
+                </div>
+                <div class="form-group">
+                    <label>Version</label>
+                    <select class="form-control est-version" id="estimate[version]" data-default="{{estimate.version_id}}" data-key="payment_term.id">
+
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="form-row col-3 clearfix">
+                <div class="form-group">
+                    <div class="group-top clearfix">
+                        <div class="f-left">
+                            <label>Organization</label>
+
+                            <input type="text" class="form-control input-md orgsearch" id="search-orgs" placeholder="search organizations">
+                            <div id="selected-org">
+                            <span class="ss-icon clicker org-remove">X</span>
+                            <span class="org-name">{{estimate.organization.name}}</span>
+                        </div>
+                    </div>
+                    <div class="f-right grp-edit clicker new-org"><img src="media/images/icon_neworg.svg" alt="add new organization"></div>
+                </div>
+                <textarea class="form-control estimate-detail" data-key="inside_address">{{estimate.inside_address}}</textarea>
+            </div>
+            <div class="form-group">
+                <div class="group-top clearfix">
+                    <div class="f-left">
+                        <label>Contacts</label>
+                        <input type="text" class="form-control input-md" id="search-external-contacts" placeholder="search contacts"></div>
+                    <div class="grp-edit f-right clicker new-contact"><img src="media/images/icon_newcontact.svg">
+                    </div>
+                </div>
+                <div class="team-box external-team" data-team="external">
+                    <ul class="team-select-list table-view">
+
+                        <li>
+                            <div><strong>Contact</strong></div>
+                            <div class="align-c"><strong>Main</strong></div>
+                            <div><strong>&nbsp;</strong></div>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="group-top">
+                    <label>Our Team</label>
+                    <input type="text" id="search-internal-contacts" placeholder="search contacts" class="form-control input-md">
+                </div>
+
+                <div class="team-box internal-team" data-team="internal">
+                    <ul class="team-select-list table-view">
+                        <li>
+                            <div><strong>Team Member</strong></div>
+                            <div class="align-c"><strong>Main</strong></div>
+                            <div><strong>&nbsp;</strong></div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            </div>
+            <div class="form-row col-4 clearfix">
+                <div class="form-group">
+                    <label class="clearfix"><span class="f-left">Category</span><span class="f-right"><i class="ss-plus clicker primary new-category"></i></label>
+                    <select class="form-control" id="category" data-default="{{estimate.category.id}}" data-key="category">
+                        <option value="">-</option>
+
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Estimate Title</label>
+                    <input name="estimate[title]" ng-model="estimate.title" class="form-control estimate-detail" id="estimate-title" value="{{estimate.title}}" data-key="title" />
+                </div>
+                <div class="form-group">
+                    <label for="payment-term">Payment Terms</label>
+                    <select class="form-control estimate-detail" id="payment-term" data-default="{{estimate.payment_term.id}}" data-key="payment_term.id">
+
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="estimate-status">Status</label>
+                    <select class="form-control estimate-detail" id="estimate-status" data-default="{{estimate.status.id}}" data-key="status.id">
+
+                    </select>
+                </div>
+            </div>
+
+
+
+        </section>
+
+
+        <section>
+            <ul class="estimate-groups">
+
+
+                <li class="collapse-panel is-open group" id="group_{{group.id}}" data-group-id="{{group.id}}" ng-repeat="group in estimate.groups">
+                    <div class="collapse-header">
+                        <div class="f-left">
+                            <div class="collapse-toggle" data-toggle-id="group_{{group.id}}"></div>
+                            <div class="group-name editable" id="grouptitle_{{group.id}}" data-type="group" data-field="title">{{group.title}}</div>
+                        </div>
+                        <div class="f-right">
+                            <div class="group-options">
+                                <div class="btn-group add-item">
+                                    <div class="btn btn-primary icon"><i class="ss-plus"></i></div>
+                                </div><!--close view-options-->
+                                <div class="btn-group view-options">
+                                    <div class="btn btn-primary icon visibility-toggle" data-toggle="visibility_{{group.id}}"><i class="ss-view"></i></div>
+
+                                </div><!--close view-options-->
+                                <div class="btn-group duplicate-group">
+                                    <div class="btn btn-primary icon"><i class="ss-layers"></i></div>
+                                </div>
+                            </div><!--close group-options-->
+                            <div class="DeleteGroup"><i class="ss-delete clicker"></i></div>
+                            <div class="slider handle"><i class="ss-rows"></i></div>
+                        </div>
+                    </div><!--close collapsePanelHeader-->
+                    <div class="collapse-content clearfix">
+                        <ul class="table-view group-table sortable">
+                            <li class="thead">
+                                <div class="align-c group-qty">Qty</div>
+                                <div>Item</div>
+                                <div class="group-desc">Description</div>
+                                <div>Rate</div>
+                                <div>Markup</div>
+                                <div>Taxable</div>
+                                <div>Subtotal</div>
+                                <div></div>
+                            </li>
+
+                            <li class="item" data-item-id="{{item.id}}" ng-repeat="item in group.items">
+                                <div class="align-c"><input type="text" id="item[{{item.id}}][item.quantity]" class="form-control qty" ng-model="item.quantity" value="{{ item.quantity | number }}"/></div>
+                                <div><strong>{{item.name}}</strong></div>
+                                <div class="editable" id="item[{{item.id}}][description]" data-type="item" data-field="description">{{item.description}}</div>
+                                <div class="editable" id="item[{{item.id}}][rate]" data-type="item" data-field="rate">{{item.rate}}</div>
+                                <div class="editable" id="item[{{item.id}}][markup]" data-type="item" data-field="markup">{{item.markup}}</div>
+                                <div class="align-c"><input id="item[{{item.id}}][taxable]" class="taxable" tabindex="-1" type="checkbox" /></div>
+                                <div class="item-total" id="item[{{item.id}}][subtotal]" >${{item.subtotal}}</div>
+                                <div class="align-r"><i class="ss-icon clicker item-delete">close</i>&nbsp;&nbsp;<i class="ss-icon handle">rows</i></div>
+                            </li>
+
+                        </ul>
+                        <div class="f-left clearfix" id="group_des_{{group.id}}">
+                            <textarea class="editor" id="description_{{group.id}}" data-type="group" data-group-id="{{group.id}}">{{group.description}}</textarea>
+                        </div>
+                        <div class="f-right total-box">
+                            <strong>Group Total:</strong> <span class="primary group-total">${{group.total}}</span>
+                        </div>
+                    </div><!--close collapse-content-->
+                </li><!--close collapse-panel-->
+
+            </ul>
+        </section>
+
+    </main>
+
+
+</section>

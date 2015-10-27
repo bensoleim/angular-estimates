@@ -1,0 +1,181 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 18, 2014, 3:00:02 PM
+    Author     : bsoleim
+*/
+
+/*PROJECT WALL*/
+.project-wall .col-2 .col-main {width:75%; margin-right:15px;}
+.project-wall .col-2 .col-sidebar {width:25%; padding: 0; }
+
+/*PROJECT HEADER*/
+.project-header {margin-bottom:15px;}
+.project-header .page-name {float:left;}
+.project-header .proj-due {float:right;}
+.proj-due {font-family:"Riga-bold", sans-serif; text-transform:uppercase;}
+.proj-due .primary, .proj-due .alert {text-transform:none; font-size:1.389em}
+
+/*PIPELINE*/
+.pipeline-wrapper { position: relative; }
+.pipeline-wrapper .startDate { position: absolute; top: -14px; left: 0px; font-size: 12px; color: red; }
+.project-pipeline {display:table; width:100%; table-layout:fixed; height:34px; margin-bottom:35px;}
+.project-pipeline > div {display:table-cell; vertical-align:middle; width:2%; background-color:#717473; position:relative; color:#c7c9c7; padding:6px 10px 0 27px; font-size:0.889em;}
+.project-pipeline > div.complete, .project-pipeline > div.current {color:#fff;}
+.project-pipeline > div.current {background-color:#35a7c6;}
+.project-pipeline > div.complete {background-color: #21315e;}
+.project-pipeline > div:first-child {border-radius:4px 0 0 4px; padding:6px 10px 0;}
+.project-pipeline > div:last-child {border-radius:0 4px 4px 0;}
+.project-pipeline > div:after, .project-pipeline > div:before {
+	left: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.project-pipeline > div:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-left-color: #f7f8f8;
+	border-width: 19px;
+	margin-top: -19px;
+	z-index:49;
+}
+.project-pipeline > div:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-left-color: #717473;
+	border-width: 17px;
+	margin-top: -17px;
+	z-index:50;
+}
+.project-pipeline > div.current:before {border-left-color:#35a7c6;}
+.project-pipeline > div.complete:before {border-left-color: #21315e;}
+.project-pipeline > div:last-child:after, .project-pipeline > div:last-child:before {display:none;}
+.project-pipeline > div > span {position:relative; z-index:10}
+.project-pipeline .percent-complete {background-color:#21315e;}
+.project-pipeline .dueDate { position: absolute; top: -14px; right: 0px; font-size: 12px; color: red; }
+div.percent-complete {position:absolute; height:100%; top:0; left:0; z-index:1;}
+.overdue .percent-complete { background-color: #f17e4c; }
+.current.stage.overdue:before { border-left-color: #f17e4c !important; }
+
+
+/*POST BOX*/
+.post-box {margin-bottom:50px;}
+
+.post-box > textarea {border-radius:4px 4px 0 0; height:150px;}
+
+.post-attachements {background-color:#e9eaea; font-size:0.889em; padding:10px;}
+.post-attachements > p {margin-bottom:10px;}
+.post-attachements > p > .btn {float:right;}
+.upload-list {margin:0; padding:0; display:table; width:80%;}
+.upload-list li {list-style-type:none; display:table-row;}
+.upload-list > li > div {display:table-cell; vertical-align:middle; white-space:nowrap; text-overflow:ellipsis; padding:3px 5px;}
+.upload-list .file-name {margin-right:15px;}
+.upload-list .attach-progress {width:100%;}
+.upload-list .attach-progress .bar-holder{background-color:#c7c9c7; border-radius:2px; height:25px; position:relative;}
+.upload-list .attach-progress .percent-complete {background: #35a7c6; /* Old browsers */ background: -moz-linear-gradient(top,  #35a7c6 0%, #2489a4 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#35a7c6), color-stop(100%,#2489a4)); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top,  #35a7c6 0%,#2489a4 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top,  #35a7c6 0%,#2489a4 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top,  #35a7c6 0%,#2489a4 100%); /* IE10+ */ background: linear-gradient(to bottom,  #35a7c6 0%,#2489a4 100%); /* W3C */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#35a7c6', endColorstr='#2489a4',GradientType=0 ); /* IE6-9 */ border-radius:2px;}
+
+.post-footer {background-color:#dfeef2; border-radius:0 0 4px 4px; padding:10px; margin-top:1px;}
+.post-footer .form-group {float:left; padding-top:8px; margin-bottom:0;}
+.post-footer .form-group label {margin-right:12px;}
+.post-footer .btn {float:right; padding:7px 25px;}
+
+/*POSTS*/
+.collapse-content.stage-posts {background-color:transparent; box-shadow:none;}
+.stage-posts .post-holder {background-color:#fff; box-shadow: 0 0 3px rgba(0,0,0,.38); font-size:0.833em; padding:10px 10px 10px 20px; line-height:1.333em; margin-bottom:4px;}
+.post-holder.approved, .post-holder.modify, .post-holder.awaiting {border-left:4px solid; padding-left:16px;}
+.stage-posts .post-holder.approved {border-left-color:#85bd49;}
+.stage-posts .post-holder.modify {border-left-color:#ee3a4e;}
+.stage-posts .post-holder.awaiting {border-left-color:#f17e4c;}
+.post-holder .user-avatar, .post-holder .post {float:left;}
+.post-holder .user-avatar {width:8%; padding-right:15px;}
+.post-holder .user-avatar img {width:100%;}
+.post-holder .post {width:92%;}
+.post .post-header {font-size:1.067em; margin-bottom:5px;}
+.post .post-header .post-info {float:right; font-size:0.813em; color:#717473;}
+.post .post-header .post-info i {margin-left:7px; font-size: 1.154em; color:#c7c9c7;}
+.post .post-header .ss-flag.flagged {color:#35a7c6;}
+.post .message {padding-right:75px;}
+.post .message p:last-child {margin-bottom:0;}
+.post .reply-post {display:inline-block; text-transform:uppercase;}
+
+.post .message-footer {margin-top:15px;}
+.post .message-footer .label {font-size:0.933em; color:#fff; padding:7px 9px; border-radius:4px; float:right;}
+.post .message-footer .label p:first-child {font-family:"Riga-bold", sans-serif;}
+.post .message-footer .label p:last-child {margin-bottom:0;}
+.post-holder.approved .message-footer .label {background-color:#85bd49;}
+.post-holder.modify .message-footer .label {background-color:#ee3a4e;}
+.post-holder.awaiting .message-footer .label {background-color:#f17e4c;}
+
+.post .message-footer .client-btns {float:right;}
+
+.message-attachments {background-color:#f7f8f8; border-radius:4px; padding:3px; width:70%; margin-bottom:15px;}
+.message-attachments .upload-list {width:100%;}
+.message-attachments .upload-list .file-name {width:100%;}
+.message-attachments .upload-list .attach-image img {width:67px;}
+
+.reply-list {margin:0 0 15px 0; padding:0;}
+.reply-list li {margin-bottom:2px; list-style-type:none;}
+.reply-list .post-holder {background-color:#f7f8f8; box-shadow:none; border-radius:3px; padding:10px; font-size:.95em; margin-bottom:0;}
+.reply-list .post .message {padding-right:0;}
+
+/*SIDEBAR*/
+.proj-sidebar {background-color:#dfeef2; border-radius:4px;}
+
+.proj-sidebar .collapse-panel {border-bottom:1px solid #f7f8f8; padding:15px; margin-bottom:0;}
+.proj-sidebar .collapse-panel:last-child {border-bottom:none;}
+.proj-sidebar .collapse-panel.is-open {margin-bottom:0;}
+.proj-sidebar .collapse-header {background:none; font-family:"Riga-bold", sans-serif; text-transform:uppercase; padding:0; border-radius:0; color:#3c3e3e; font-size:1em; margin-bottom:10px; margin-left:-30px;}
+.proj-sidebar .collapse-toggle {font-size:11px; background-image:url(../images/collapsetogglebg.png); background-repeat:no-repeat; color:#fff; padding:2px 8px 2px 4px !important; border:none;}
+.proj-sidebar .collapse-header .f-left .group-name {padding:1px 0 0 3px;}
+.proj-sidebar .collapse-content {background:none; box-shadow:none; padding:0; font-size:0.833em;}
+
+.proj-sidebar .form-group {margin-bottom:4px;}
+.proj-sidebar .form-control {height:28px; width:60%;}
+.proj-sidebar .form-control.input-md {width:50%;}
+.proj-sidebar label, .proj-sidebar .label, .budget-sidebar-list .label {margin-bottom: 0; background-color: #35a7c6; padding: 5px 9px; border-radius: 5px 0 0 5px; width: 40%; margin-right: -7px; color: #fff; vertical-align:middle; display:inline-block;}
+.proj-sidebar label.checkbox {width:100%; background-color:transparent; color:#3c3e3e;}
+.proj-sidebar label.checkbox input {margin-left:5px;}
+.proj-sidebar label.alert {background-color:#f17e4c;}
+.proj-sidebar ul {margin:0; padding:0;}
+.proj-sidebar ul li {list-style-type:none;}
+.proj-sidebar h4 {margin-bottom:0; font-size:1.056em;}
+.proj-sidebar .table-view > li > div {padding:5px 7px;}
+
+.team-list-header {background-color:#35a7c6; color:#fff; border-radius:2px; padding:3px 5px 1px; font-size:0.944em; font-family:"Riga-bold", sans-serif; margin-bottom:7px;}
+.team-list-header i {float:right;}
+.proj-sidebar .team-list {font-size:0.944em; margin-bottom:10px;}
+.team-list li {margin-bottom:4px;}
+.team-list li:last-child {margin-bottom:0;}
+.team-list li > div {display:inline-block; vertical-align:middle;}
+.team-list .user-avatar {width:13%; margin-right:5px;}
+.team-list .user-avatar img {width:100%;}
+.team-list .user-role {display:block; font-family:'Riga-bold', sans-serif; text-transform:uppercase;}
+
+.estimate-list li {margin-bottom:4px;}
+.estimate-list li a {display:inline-block; vertical-align:middle; width:60%; border-radius:4px; background-color:#b8dee8; color:#3c3e3e; text-decoration:none; padding:5px 5px 6px 10px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+
+.tracking-table > li > div {text-align:center;}
+.tracking-table > li > div:first-child {text-align:left;}
+.tracking-table .thead {text-transform:uppercase;}
+.proj-sidebar .tracking-table li:nth-child(even) {background-color:#b8dee8;}
+
+#attachlinks-list .collapse-content {max-height:300px; overflow-y:scroll;}
+
+
+.project-wall{
+  /* Collapse Panels */
+  .collapse-panel >  .collapse-content.stage-posts { display: none; }
+  .collapse-panel.is-open > .collapse-content.stage-posts { display: block; }
+  //.collapse-panel.project-stage { display: none; }
+  .collapse-panel.project-stage.active { display: block; }
+  .clicker.reply-post { float: right; }
+}
+
+
+/*==================END PROJECT WALL==================*/

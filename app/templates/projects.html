@@ -1,0 +1,25 @@
+
+
+<h1>Projects</h1>
+
+<table class="table table-striped" ng-cloak>
+    <thead>
+    <tr>
+        <td></td>
+        <td>#</td>
+        <td>Creator</td>
+        <td>Title</td>
+        <td>Created</td>
+        <td>Modified</td>
+    </tr>
+    </thead>
+
+    <tr ng-repeat="project in projects">
+        <td><a href="#/project/{{project.id}}">View</a></td>
+        <td>{{ project.id }}</td>
+        <td>{{ project.owner.first_name }} {{ project.owner.last_name }}</td>
+        <td>{{ project.title }}</td>
+        <td>{{ project.created_at }}</td>
+        <td>{{ project.updated_at }}</td>
+    </tr>
+</table>

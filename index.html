@@ -1,0 +1,82 @@
+<html ng-app="myApp">
+<head>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="media/css/app.css">
+
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <!-- Angular Includes -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.4.7/angular-route.js"></script>
+    <script src="https://code.angularjs.org/1.4.7/angular-sanitize.min.js"></script>
+
+    <!-- Main App -->
+    <script src="app/app.js"></script>
+    <script src="app/routes.js"></script>
+
+    <!-- Services -->
+    <script src="app/services/apiService.js"></script>
+
+    <!-- Controllers -->
+    <script src="app/controllers/loginController.js"></script>
+    <script src="app/controllers/estimatesController.js"></script>
+    <script src="app/controllers/estimateController.js"></script>
+    <script src="app/controllers/projectsController.js"></script>
+
+</head>
+<body>
+
+    <header>
+        <aside class="side-nav">
+            <div class="logo"><img src="media/images/trackfrontlogo.png" alt="trackfront"/>	</div>
+
+            <ul class="main-nav">
+                <li><a href="#/estimates"><i class="ss-barchart"></i> Estimates</a></li>
+                <li><a href="#/projects"><i class="ss-thumbnails"></i> Projects</a></li>
+            </ul>
+
+        </aside>
+    </header>
+
+    <div class="overlay" style="display:none;">
+        <div class="loading"><i class="fa fa-refresh fa-spin"></i></div>
+    </div>
+
+    <main class="page-wrap">
+        <div class="page">
+            <div class="header">
+                <div class="container">
+                    <div class="menu-tab t-shadow strong">
+                        <i class="ss-rows"></i> Menu
+                    </div>
+                    <div class="section-name">
+                        <a href=""><i class=""></i> Estimates</a>
+                    </div>
+                    <div class="header-right">
+                        <div class="user-badge">
+
+                        </div>
+
+                        <div class="global-search">
+                            <form role="form" class="form-inline">
+                                <div class="form-group">
+                                    <input type="text" id="glbsrch-input" class="form-control" placeholder="Search"/>
+                                </div>
+                                <button type="submit" class="btn btn-default"><i class="ss-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div><!--close header-->
+
+            <div class="container main-cont" ng-view>
+
+            </div>
+        </div>
+    </main>
+
+
+</body>
+</html>
