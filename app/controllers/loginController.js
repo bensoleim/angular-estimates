@@ -1,3 +1,11 @@
+/**
+ * Created by bsoleim on 10/21/15.
+ * TrackFront - Angular Version
+ * File: loginController.js
+ * Description: Login Controller
+ */
+
+
 myApp.controller('loginController', ['$scope', '$filter', '$http', '$location', '$log', '$routeParams', 'apiService', function($scope, $filter, $http, $location, $log, $routeParams, apiService)
 {
     $scope.username = "bsoleim@purei.com";

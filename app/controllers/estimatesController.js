@@ -1,3 +1,9 @@
+/**
+ * Created by bsoleim on 10/21/15.
+ * TrackFront - Angular Version
+ * File: estimatesController.js
+ * Description: Estimate List Controller
+ */
 
 
 myApp.controller('estimatesController', ['$scope', '$sce','$filter', '$http', '$location', '$log', '$routeParams', 'apiService', function($scope, $sce, $filter, $http, $location, $log, $routeParams, apiService)

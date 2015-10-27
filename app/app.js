@@ -1,5 +1,7 @@
 /**
  * Created by bsoleim on 10/21/15.
+ * TrackFront - Angular Version
+ * File: app.js
  */
 
 var myApp = angular.module('myApp', ['ngRoute','ngSanitize']);

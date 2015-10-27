@@ -1,3 +1,10 @@
+/**
+ * Created by bsoleim on 10/21/15.
+ * TrackFront - Angular Version
+ * File: apiService.js
+ * Description: TrackFront API Rest / Oauth Service.
+ */
+
 
 myApp.service('apiService', ['$http', '$log', function($http, $log){
 
@@ -8,7 +15,6 @@ myApp.service('apiService', ['$http', '$log', function($http, $log){
     this.accesstoken = "";
     this.client_id = 1;
     this._method = "GET";
-    this.responseObj = "";
     this.response = "";
     this.client_secret = "2_P5gVeYb>J@+#hsDv9uq4?Yf_86M4";
 

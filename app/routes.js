@@ -1,4 +1,9 @@
-
+/**
+ * Created by bsoleim on 10/21/15.
+ * TrackFront - Angular Version
+ * File: routes.js
+ * Description: Routing File
+ */
 
 
 myApp.config(function ($routeProvider)

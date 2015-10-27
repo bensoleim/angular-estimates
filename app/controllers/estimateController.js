@@ -1,4 +1,9 @@
-
+/**
+ * Created by bsoleim on 10/21/15.
+ * TrackFront - Angular Version
+ * File: estimateController.js
+ * Description: Estimate Edit Controller
+ */
 
 myApp.controller('estimateController', ['$scope', '$sce','$filter', '$http', '$location', '$log', '$routeParams', 'apiService', function($scope, $sce, $filter, $http, $location, $log, $routeParams, apiService)
 {
