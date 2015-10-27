@@ -9,10 +9,11 @@ myApp.controller('estimateController', ['$scope', '$sce','$filter', '$http', '$l
 {
     $scope.id = $routeParams.id || 5157;
     $scope.estimate = {};
+    $scope.options = apiService.estimateOptions;
 
     $scope.$watch('estimate',function(newValue)
     {
-        $log.log($scope.estimate.groups);
+        $log.log($scope.estimate);
     }, true);
 
     $scope.filterHtml = function(html){
@@ -22,7 +23,9 @@ myApp.controller('estimateController', ['$scope', '$sce','$filter', '$http', '$l
     if(apiService.accesstoken == ""){
         $location.path("/login");
     }else{
-        apiService.get("estimates/" + $scope.id, function(r){
+        apiService.get("estimates/" + $scope.id + "/edit", function(r){
+            $scope.options = r.options;
+            $log.warn($scope.options);
             $log.warn(r);
             $scope.estimate = r.estimate;
             $scope.bind();

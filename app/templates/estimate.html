@@ -35,8 +35,7 @@
                 </div>
                 <div class="form-group">
                     <label>Version</label>
-                    <select class="form-control est-version" id="estimate[version]" data-default="{{estimate.version_id}}" data-key="payment_term.id">
-
+                    <select class="form-control est-version" id="estimate[version]"  ng-options="item as item.dated for item in estimate.versions track by item.version_id" ng-model="estimate.version_id">
                     </select>
                 </div>
             </div>
@@ -100,9 +99,7 @@
             <div class="form-row col-4 clearfix">
                 <div class="form-group">
                     <label class="clearfix"><span class="f-left">Category</span><span class="f-right"><i class="ss-plus clicker primary new-category"></i></label>
-                    <select class="form-control" id="category" data-default="{{estimate.category.id}}" data-key="category">
-                        <option value="">-</option>
-
+                    <select id="category" class="form-control estimate-detail" ng-options="item as item.name for item in options.category track by item.id" ng-model="estimate.category">
                     </select>
                 </div>
                 <div class="form-group">
@@ -111,21 +108,32 @@
                 </div>
                 <div class="form-group">
                     <label for="payment-term">Payment Terms</label>
-                    <select class="form-control estimate-detail" id="payment-term" data-default="{{estimate.payment_term.id}}" data-key="payment_term.id">
-
+                    <select id="payment-term" class="form-control estimate-detail" ng-options="item as item.name for item in options.payment_terms track by item.id" ng-model="estimate.payment_term">
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="estimate-status">Status</label>
-                    <select class="form-control estimate-detail" id="estimate-status" data-default="{{estimate.status.id}}" data-key="status.id">
 
+                    <select id="estimate-status" class="form-control estimate-detail" ng-options="item as item.description for item in options.status track by item.id" ng-model="estimate.status">
                     </select>
+
                 </div>
             </div>
 
 
 
         </section>
+
+        <section class="toolbar align-r">
+            <!--
+            <select class="form-control input-sm" id="templates-list" ng-options="item as item.template_name for item in options.templates track by item.estimate_ref_id">
+            </select>
+            -->
+
+            <select class="form-control input-sm" id="groups-list" ng-options="item as item.title for item in options.groups track by item.id">
+
+            </select>
+        </section><!--close toolbar-->
 
 
         <section>

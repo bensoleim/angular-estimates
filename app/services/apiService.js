@@ -18,6 +18,8 @@ myApp.service('apiService', ['$http', '$log', function($http, $log){
     this.response = "";
     this.client_secret = "2_P5gVeYb>J@+#hsDv9uq4?Yf_86M4";
 
+    this.estimateOptions = {};
+
     this.login = function(data, callback)
     {
         $(".overlay").show();
